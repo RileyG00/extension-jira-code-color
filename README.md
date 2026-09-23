@@ -15,8 +15,8 @@ background colors.
 
 ## Configure
 
-Right-click the extension's icon (or its entry in `chrome://extensions`)
-and choose **Options**. The settings page lets you:
+Click the extension's icon in the browser toolbar (pin it from the
+extensions/puzzle-piece menu to keep it visible). The popup lets you:
 
 - Pick from a set of quick preset themes (Sunset, Ocean Blue, Forest
   Green, High Contrast, etc.)
