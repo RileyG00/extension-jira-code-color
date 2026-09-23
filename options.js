@@ -1,16 +1,19 @@
 const DEFAULTS = {
-  textColor: "#ed8515",
-  backgroundColor: "#3b3a3a"
+  textColor: "#ffc896",
+  backgroundColor: "#433831"
 };
 
+// Dark themes are tuned for Jira dark mode: text/background contrast is at
+// least 7:1 (WCAG AAA) and the background is lifted enough to stand out from
+// Jira's dark surfaces (#1f1f21 / #22272b).
 const THEMES = [
-  { name: "Sunset (default)", textColor: "#ed8515", backgroundColor: "#3b3a3a" },
-  { name: "Ocean Blue", textColor: "#4fc3f7", backgroundColor: "#1c2b36" },
-  { name: "Forest Green", textColor: "#7ed957", backgroundColor: "#1e2b1e" },
-  { name: "Classic Purple", textColor: "#c792ea", backgroundColor: "#2b213b" },
-  { name: "Crimson", textColor: "#ff6b6b", backgroundColor: "#2b1a1a" },
+  { name: "Sunset (default)", textColor: "#ffc896", backgroundColor: "#433831" },
+  { name: "Ocean Blue", textColor: "#a6e1ff", backgroundColor: "#1f4260" },
+  { name: "Forest Green", textColor: "#b4f59c", backgroundColor: "#274727" },
+  { name: "Classic Purple", textColor: "#e8ccff", backgroundColor: "#43335e" },
+  { name: "Crimson", textColor: "#ffc7c7", backgroundColor: "#5c2e2e" },
   { name: "High Contrast", textColor: "#ffffff", backgroundColor: "#000000" },
-  { name: "Solarized", textColor: "#b58900", backgroundColor: "#002b36" },
+  { name: "Solarized", textColor: "#f7d460", backgroundColor: "#08475a" },
   { name: "Light Mode", textColor: "#c7254e", backgroundColor: "#f9f2f4" }
 ];
 
@@ -127,5 +130,6 @@ resetBtn.addEventListener("click", () => {
 renderThemes();
 
 chrome.storage.sync.get(DEFAULTS, (settings) => {
-  setInputs(settings.textColor, settings.backgroundColor);
+  const migrated = migrateLegacyColors(settings);
+  setInputs(migrated.textColor, migrated.backgroundColor);
 });

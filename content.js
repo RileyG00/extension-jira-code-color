@@ -1,8 +1,8 @@
 (function () {
   const STYLE_ID = "jira-code-color-style";
   const DEFAULTS = {
-    textColor: "#ed8515",
-    backgroundColor: "#3b3a3a"
+    textColor: "#ffc896",
+    backgroundColor: "#433831"
   };
 
   const SELECTORS = [
@@ -28,7 +28,9 @@
   }
 
   function loadAndApply() {
-    chrome.storage.sync.get(DEFAULTS, applyStyles);
+    chrome.storage.sync.get(DEFAULTS, (settings) => {
+      applyStyles(migrateLegacyColors(settings));
+    });
   }
 
   loadAndApply();

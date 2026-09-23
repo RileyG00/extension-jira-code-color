@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Jira Inline Code Colorizer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Customize the text and background color of inline code blocks on Atlassian (Jira) sites.",
   "permissions": ["storage"],
   "host_permissions": ["*://*.atlassian.net/*"],
   "content_scripts": [
     {
       "matches": ["*://*.atlassian.net/*"],
-      "js": ["content.js"],
+      "js": ["migrate.js", "content.js"],
       "run_at": "document_start",
       "all_frames": true
     }

@@ -22,7 +22,12 @@ and choose **Options**. The settings page lets you:
   Green, High Contrast, etc.)
 - Set custom text and background colors via color pickers or hex input
 - See a live preview before it's applied
-- Reset back to the default theme (`#ed8515` text on `#3b3a3a` background)
+- Reset back to the default theme (`#ffc896` text on `#433831` background)
+
+The dark presets are tuned for Jira dark mode: every one has at least 7:1
+text/background contrast (WCAG AAA), and each background is light enough
+to stand out from Jira's dark page surface. Users who had picked an older
+preset are moved to its updated colors automatically.
 
 Settings are stored with `chrome.storage.sync`, so they follow you across
 Chrome profiles signed into the same account, and pages update live via
