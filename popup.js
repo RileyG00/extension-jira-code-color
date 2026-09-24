@@ -12,9 +12,13 @@ const THEMES = [
   { name: "Forest Green", textColor: "#b4f59c", backgroundColor: "#274727" },
   { name: "Classic Purple", textColor: "#e8ccff", backgroundColor: "#43335e" },
   { name: "Crimson", textColor: "#ffc7c7", backgroundColor: "#5c2e2e" },
-  { name: "High Contrast", textColor: "#ffffff", backgroundColor: "#000000" },
-  { name: "Solarized", textColor: "#f7d460", backgroundColor: "#08475a" },
-  { name: "Light Mode", textColor: "#c7254e", backgroundColor: "#f9f2f4" }
+  { name: "Synthwave", textColor: "#ffc2f0", backgroundColor: "#5c2a70" },
+  { name: "Cyberpunk", textColor: "#fff27a", backgroundColor: "#522a6b" },
+  { name: "Matrix", textColor: "#9dffb0", backgroundColor: "#1a5234" },
+  { name: "Dracula", textColor: "#f1fa8c", backgroundColor: "#44475a" },
+  { name: "Nord Frost", textColor: "#d8f3ff", backgroundColor: "#2e4a62" },
+  { name: "Teal Lagoon", textColor: "#aefff0", backgroundColor: "#1d4a4a" },
+  { name: "Midnight Gold", textColor: "#ffe08a", backgroundColor: "#2f3a5c" },
 ];
 
 const textColorInput = document.getElementById("text-color");
