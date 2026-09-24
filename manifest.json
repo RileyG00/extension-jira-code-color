@@ -8,6 +8,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.atlassian.net/*"],
+      "css": ["content.css"],
       "js": ["content.js"],
       "run_at": "document_start",
       "all_frames": true

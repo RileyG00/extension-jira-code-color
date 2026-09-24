@@ -1,0 +1,7 @@
+span.code,
+code[data-renderer-mark="true"],
+span.date-node {
+  color: var(--jcc-text, #ffc896) !important;
+  background-color: var(--jcc-bg, #433831) !important;
+  transition: none !important;
+}

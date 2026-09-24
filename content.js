@@ -5,33 +5,18 @@
     backgroundColor: "#433831"
   };
 
-  const SELECTORS = [
-    'span.code',
-    'code[data-renderer-mark="true"]',
-    'span.date-node'
-  ];
-
-  function buildCSS({ textColor, backgroundColor }) {
-    return `${SELECTORS.join(",\n")} {
-  color: ${textColor} !important;
-  background-color: ${backgroundColor} !important;
-}`;
-  }
-
-  function applyStyles(settings) {
+  function applyStyles({ textColor, backgroundColor }) {
     let styleEl = document.getElementById(STYLE_ID);
     if (!styleEl) {
       styleEl = document.createElement("style");
       styleEl.id = STYLE_ID;
       (document.head || document.documentElement).appendChild(styleEl);
     }
-    styleEl.textContent = buildCSS(settings);
+    styleEl.textContent = `:root { --jcc-text: ${textColor}; --jcc-bg: ${backgroundColor}; }`;
   }
 
   function loadAndApply() {
-    chrome.storage.sync.get(DEFAULTS, (settings) => {
-      applyStyles(settings);
-    });
+    chrome.storage.sync.get(DEFAULTS, applyStyles);
   }
 
   loadAndApply();
