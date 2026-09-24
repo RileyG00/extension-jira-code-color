@@ -6,8 +6,9 @@
   };
 
   const SELECTORS = [
-    "span.code",
-    'code[data-renderer-mark="true"]'
+    'span.code',
+    'code[data-renderer-mark="true"]',
+    'span.date-node'
   ];
 
   function buildCSS({ textColor, backgroundColor }) {
@@ -29,7 +30,7 @@
 
   function loadAndApply() {
     chrome.storage.sync.get(DEFAULTS, (settings) => {
-      applyStyles(migrateLegacyColors(settings));
+      applyStyles(settings);
     });
   }
 

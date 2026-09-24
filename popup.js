@@ -130,6 +130,5 @@ resetBtn.addEventListener("click", () => {
 renderThemes();
 
 chrome.storage.sync.get(DEFAULTS, (settings) => {
-  const migrated = migrateLegacyColors(settings);
-  setInputs(migrated.textColor, migrated.backgroundColor);
+  setInputs(settings.textColor, settings.backgroundColor);
 });
